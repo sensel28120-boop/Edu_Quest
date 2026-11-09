@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5146e5">
+<title>EDUQUEST — Learn, Play, Be Active</title>
+<style>
+:root{--primary:#5146e5;--primary2:#756cf6;--ink:#202342;--muted:#777b98;--bg:#f5f6ff;--card:#fff;--line:#e9eafd;--green:#1eaa78;--red:#e35d70;--gold:#f4b740;--shadow:0 12px 32px rgba(43,48,110,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}
+.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,20px);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:21px;letter-spacing:-.7px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--primary),#938bff);display:grid;place-items:center;color:white;font-size:21px;box-shadow:0 6px 14px #5146e544}.brand span{color:var(--primary)}.top-right{display:flex;align-items:center;gap:12px}.user-chip{background:#f0efff;border-radius:30px;padding:9px 14px;font-size:13px;font-weight:700;color:var(--primary)}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1380px;margin:auto;min-height:calc(100vh - 72px)}.sidebar{padding:25px 16px;border-right:1px solid var(--line);background:#fff}.nav-label{font-size:10px;font-weight:800;color:#a0a2ba;letter-spacing:1.3px;margin:14px 12px 10px}.nav-btn{width:100%;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:transparent;color:#666b89;text-align:left;font-weight:700;margin:3px 0}.nav-btn:hover,.nav-btn.active{background:#f0efff;color:var(--primary)}.nav-icon{width:22px;text-align:center;font-size:17px}.main{padding:30px clamp(18px,4vw,48px);min-width:0}.welcome{background:linear-gradient(115deg,#5146e5,#8279fa);color:#fff;border-radius:24px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative;box-shadow:0 14px 30px #5146e52b}.welcome:after{content:"✦";position:absolute;font-size:190px;right:8%;top:-65px;color:#ffffff18}.welcome h1{font-size:clamp(24px,3vw,34px);margin:0 0 8px;letter-spacing:-1px}.welcome p{margin:0;color:#e8e7ff;max-width:520px;line-height:1.6}.welcome .hero-emoji{font-size:70px;z-index:1}.btn{background:var(--primary);color:#fff;border-radius:12px;padding:12px 17px;font-weight:800;box-shadow:0 6px 14px #5146e52b}.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}.btn.light{background:#fff;color:var(--primary);box-shadow:none}.btn.ghost{background:#f0efff;color:var(--primary);box-shadow:none}.btn.danger{background:#fff0f2;color:var(--red);box-shadow:none}.btn.small{padding:8px 12px;font-size:12px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 15px}.section-head h2{font-size:19px;margin:0;letter-spacing:-.4px}.muted{color:var(--muted)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}.stat-card,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow)}.stat-card{display:flex;align-items:center;gap:14px}.stat-icon{width:45px;height:45px;border-radius:14px;background:#f0efff;display:grid;place-items:center;font-size:22px}.stat-card strong{display:block;font-size:23px}.stat-card small{color:var(--muted);font-weight:600}.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.category{border:1px solid var(--line);border-radius:17px;background:#fff;padding:18px;text-align:left;transition:.18s;box-shadow:var(--shadow)}.category:hover{transform:translateY(-3px);border-color:#c8c4ff}.category .emoji{font-size:30px}.category h3{margin:10px 0 4px;font-size:15px}.category p{margin:0;color:var(--muted);font-size:12px}.pill{display:inline-flex;padding:5px 9px;border-radius:30px;background:#f0efff;color:var(--primary);font-size:11px;font-weight:800}.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.leader-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.leader-row:last-child{border:0}.rank{width:28px;height:28px;border-radius:9px;background:#f0efff;color:var(--primary);display:grid;place-items:center;font-weight:900;font-size:12px}.avatar{width:35px;height:35px;border-radius:50%;background:#e9e7ff;display:grid;place-items:center;font-weight:900;color:var(--primary)}.leader-row .score{margin-left:auto;font-weight:900;color:var(--primary)}.empty{text-align:center;padding:35px 15px;color:var(--muted)}.page-title{margin:0 0 6px;font-size:26px}.page-sub{margin:0 0 22px;color:var(--muted)}.form-card{max-width:480px;margin:35px auto;padding:28px}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:13px;font-weight:800}.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid #dedff0;border-radius:11px;background:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px #5146e51a}.full{width:100%}.quiz-wrap{max-width:760px;margin:0 auto}.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.progress{height:8px;background:#e7e8f6;border-radius:20px;overflow:hidden;margin:12px 0 22px}.progress div{height:100%;background:linear-gradient(90deg,var(--primary),#a49eff);width:0;transition:.3s}.question{font-size:22px;line-height:1.4;margin:10px 0 20px}.option{width:100%;text-align:left;padding:15px;border:1px solid var(--line);border-radius:13px;background:#fff;margin:7px 0;font-weight:700;color:var(--ink);display:flex;gap:12px;align-items:center}.option:hover{border-color:#aaa4ff;background:#faf9ff}.option.selected{border:2px solid var(--primary);background:#f2f1ff}.option.correct{border-color:var(--green);background:#edfbf5}.option.wrong{border-color:var(--red);background:#fff2f4}.option b{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;background:#f0efff;color:var(--primary);font-size:12px}.feedback{padding:13px;border-radius:12px;margin-top:12px;font-size:14px;line-height:1.5}.feedback.good{background:#eaf9f2;color:#167a57}.feedback.bad{background:#fff0f2;color:#b83d50}.result-score{font-size:54px;font-weight:950;color:var(--primary);letter-spacing:-2px}.table{width:100%;border-collapse:collapse;font-size:14px}.table th,.table td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px}.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.notice{padding:13px 15px;border-radius:12px;background:#fff8e8;color:#8a6415;font-size:13px;line-height:1.5}.footer{text-align:center;color:#a0a2b8;font-size:12px;padding:25px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto;padding:9px 12px;border-right:0;border-bottom:1px solid var(--line);position:sticky;top:72px;z-index:8}.nav-label{display:none}.nav-btn{width:auto;white-space:nowrap;margin:0 3px;padding:10px}.main{padding:22px 16px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}}
+@media(max-width:520px){.stats-grid{grid-template-columns:1fr}.welcome{padding:23px}.welcome .hero-emoji{font-size:48px}.category-grid{gap:10px}.category{padding:14px}.teacher-grid{grid-template-columns:1fr}.topbar{padding:0 15px}.brand{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">✦</div>EDU<span>QUEST</span></div>
+  <div class="top-right"><span class="user-chip" id="topUser">Mode Tamu</span><button class="btn ghost small" id="logoutBtn" onclick="logout()" style="display:none">Keluar</button></div>
+</header>
+<div id="loginScreen" class="main">
+  <div class="card form-card">
+    <div style="text-align:center;margin-bottom:20px"><div class="logo" style="margin:auto;width:58px;height:58px;font-size:28px">✦</div><h1 style="margin:12px 0 5px">Selamat datang di EDUQUEST!</h1><p class="muted" style="margin:0">Belajar, bermain, dan jadi lebih aktif.</p></div>
+    <div class="field"><label>Nama lengkap</label><input id="loginName" placeholder="Contoh: Sen"></div>
+    <div class="field"><label>Kelas</label><input id="loginClass" placeholder="Contoh: X-8"></div>
+    <div class="field"><label>Masuk sebagai</label><select id="loginRole"><option value="student">Siswa</option><option value="teacher">Guru</option></select></div>
+    <button class="btn full" onclick="login()">Masuk ke EDUQUEST →</button>
+    <p class="muted" style="font-size:11px;text-align:center;margin:16px 0 0">Demo lokal: data disimpan di browser perangkat ini.</p>
+  </div>
+</div>
+<div id="app" class="layout hidden">
+  <aside class="sidebar">
+    <div class="nav-label">MENU UTAMA</div>
+    <button class="nav-btn active" data-page="home" onclick="showPage('home')"><span class="nav-icon">⌂</span>Beranda</button>
+    <button class="nav-btn" data-page="categories" onclick="showPage('categories')"><span class="nav-icon">▦</span>Kategori Kuis</button>
+    <button class="nav-btn" data-page="leaderboard" onclick="showPage('leaderboard')"><span class="nav-icon">🏆</span>Leaderboard</button>
+    <button class="nav-btn" data-page="teacher" id="teacherNav" onclick="showPage('teacher')"><span class="nav-icon">▤</span>Dashboard Guru</button>
+  </aside>
+  <main class="main">
+    <section id="page-home">
+      <div class="welcome"><div><span class="pill" style="background:#ffffff25;color:#fff">PLATFORM BELAJAR INTERAKTIF</span><h1 id="welcomeTitle">Hai, Pejuang Ilmu! 👋</h1><p>Asah pengetahuanmu melalui kuis seru. Setiap usaha, pertanyaan, dan jawaban adalah langkah untuk menjadi lebih aktif.</p><button class="btn light" style="margin-top:18px" onclick="showPage('categories')">Mulai Kuis Sekarang →</button></div><div class="hero-emoji">🎓</div></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon">⭐</div><div><strong id="myPoints">0</strong><small>Total poin</small></div></div>
+        <div class="stat-card"><div class="stat-icon">📝</div><div><strong id="myQuizzes">0</strong><small>Kuis selesai</small></div></div>
+        <div class="stat-card"><div class="stat-icon">🎯</div><div><strong id="myAverage">0%</strong><small>Rata-rata nilai</small></div></div>
+      </div>
+      <div class="section-head"><h2>Pilih kategori belajar</h2><button class="btn ghost small" onclick="showPage('categories')">Lihat semua</button></div>
+      <div class="category-grid" id="homeCategories"></div>
+      <div class="section-head"><h2>🏆 Peringkat teratas</h2><button class="btn ghost small" onclick="showPage('leaderboard')">Leaderboard</button></div>
+      <div class="card" id="homeLeaders"></div>
+    </section>
+    <section id="page-categories" class="hidden">
+      <h1 class="page-title">Kategori Kuis 📚</h1><p class="page-sub">Pilih mata pelajaran dan tantang dirimu.</p>
+      <div class="category-grid" id="allCategories"></div>
+    </section>
+    <section id="page-quiz" class="hidden">
+      <div class="quiz-wrap">
+        <div class="quiz-top"><button class="btn ghost small" onclick="exitQuiz()">← Keluar</button><span class="pill" id="quizCategory">Kategori</span><span class="pill" id="quizCounter">1/5</span></div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="muted" style="font-size:12px;font-weight:800">PERTANYAAN</span><span class="muted" id="quizTimer">⏱ Santai</span></div>
+          <h2 class="question" id="questionText"></h2>
+          <div id="options"></div>
+          <div id="feedback" class="feedback hidden"></div>
+          <div style="display:flex;justify-content:flex-end;margin-top:18px"><button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Jawab & Lanjut →</button></div>
+        </div>
+      </div>
+    </section>
+    <section id="page-result" class="hidden">
+      <div class="card" style="max-width:650px;margin:10px auto;text-align:center;padding:32px">
+        <div style="font-size:55px">🎉</div><h1 style="margin:8px 0">Kuis selesai!</h1><p class="muted" id="resultMessage">Usaha yang hebat.</p>
+        <div class="result-score" id="resultScore">0</div><div class="muted">Nilai kamu</div>
+        <div class="stats-grid" style="margin:22px 0"><div class="stat-card"><div><strong id="resultCorrect">0</strong><small>Jawaban benar</small></div></div><div class="stat-card"><div><strong id="resultPoints">0</strong><small>Poin didapat</small></div></div><div class="stat-card"><div><strong id="resultPercent">0%</strong><small>Akurasi</small></div></div></div>
+        <button class="btn full" onclick="showPage('categories')">Main kuis lain</button><button class="btn ghost full" style="margin-top:9px" onclick="showPage('leaderboard')">Lihat leaderboard</button>
+      </div>
+    </section>
+    <section id="page-leaderboard" class="hidden">
+      <h1 class="page-title">Leaderboard 🏆</h1><p class="page-sub">Apresiasi untuk proses belajar dan usaha setiap siswa.</p>
+      <div class="card"><div id="leaderboardContent"></div></div>
+      <p class="notice" style="margin-top:14px">Peringkat dihitung dari poin kuis yang tersimpan di browser ini. Gunakan perangkat dan data kelas yang sama untuk demonstrasi kelompok.</p>
+    </section>
+    <section id="page-teacher" class="hidden">
+      <h1 class="page-title">Dashboard Guru 👩‍🏫</h1><p class="page-sub">Kelola pertanyaan dan pantau hasil kuis siswa.</p>
+      <div class="teacher-grid">
+        <div class="card">
+          <h3 style="margin-top:0">➕ Tambahkan soal</h3>
+          <div class="field"><label>Kategori</label><select id="newCategory"></select></div>
+          <div class="field"><label>Pertanyaan</label><textarea id="newQuestion" rows="3" placeholder="Tulis pertanyaan..."></textarea></div>
+          <div class="field"><label>Pilihan A</label><input id="optA" placeholder="Pilihan A"></div>
+          <div class="field"><label>Pilihan B</label><input id="optB" placeholder="Pilihan B"></div>
+          <div class="field"><label>Pilihan C</label><input id="optC" placeholder="Pilihan C"></div>
+          <div class="field"><label>Pilihan D</label><input id="optD" placeholder="Pilihan D"></div>
+          <div class="field"><label>Jawaban benar</label><select id="correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
+          <button class="btn full" onclick="addQuestion()">Simpan soal</button>
+          <p id="addMessage" class="muted" style="font-size:12px"></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">📊 Ringkasan kelas</h3>
+          <div class="stats-grid" style="grid-template-columns:1fr 1fr"><div class="stat-card"><div><strong id="classStudents">0</strong><small>Profil siswa</small></div></div><div class="stat-card"><div><strong id="classAttempts">0</strong><small>Total kuis</small></div></div></div>
+          <h3 style="margin-top:24px">Hasil kuis terbaru</h3><div id="teacherResults"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px"><h3 style="margin-top:0">💡 Catatan penggunaan</h3><p class="muted" style="font-size:13px;line-height:1.6">Mode guru pada versi demo ini dapat menambahkan soal ke penyimpanan browser. Untuk penggunaan satu sekolah dengan banyak perangkat, aplikasi perlu dikembangkan dengan backend dan database bersama.</p></div>
+    </section>
+    <div class="footer">EDUQUEST © 2026 · Learn, Play, and Be Active!</div>
+  </main>
+</div>
+<script>
+const categories=[
+ {id:"pancasila",name:"Pendidikan Pancasila",emoji:"🇮🇩",desc:"Pancasila, UUD 1945, dan kewarganegaraan"},
+ {id:"math",name:"Matematika",emoji:"📐",desc:"Logika, angka, dan pemecahan masalah"},
+ {id:"indonesia",name:"Bahasa Indonesia",emoji:"📖",desc:"Bahasa, teks, dan sastra"},
+ {id:"english",name:"Bahasa Inggris",emoji:"🌎",desc:"Vocabulary dan grammar"},
+ {id:"ipa",name:"IPA",emoji:"🔬",desc:"Sains dan alam sekitar"},
+ {id:"ips",name:"IPS",emoji:"🌏",desc:"Sejarah, geografi, dan ekonomi"}
+];
+const defaultQuestions={
+pancasila:[
+ {q:"Apa dasar negara Indonesia?",o:["Pancasila","UUD 1945","Bhinneka Tunggal Ika","Proklamasi"],a:0,e:"Pancasila merupakan dasar negara sekaligus ideologi negara Indonesia."},
+ {q:"Lambang sila ketiga Pancasila adalah ...",o:["Bintang","Rantai","Pohon beringin","Kepala banteng"],a:2,e:"Pohon beringin melambangkan persatuan Indonesia."},
+ {q:"UUD Negara Republik Indonesia Tahun 1945 disahkan pada tanggal ...",o:["1 Juni 1945","17 Agustus 1945","18 Agustus 1945","20 Mei 1908"],a:2,e:"PPKI mengesahkan UUD 1945 pada 18 Agustus 1945."},
+ {q:"Lembaga yang berwenang mengubah dan menetapkan UUD adalah ...",o:["DPR","MPR","MA","BPK"],a:1,e:"Pasal 3 ayat (1) UUD 1945 menyatakan kewenangan tersebut dimiliki MPR."},
+ {q:"Semboyan Bhinneka Tunggal Ika memiliki arti ...",o:["Bersatu kita teguh","Berbeda-beda tetapi tetap satu","Maju bersama bangsa","Keadilan untuk semua"],a:1,e:"Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu."}
+],
+math:[
+ {q:"Hasil dari 12 × 8 adalah ...",o:["86","92","96","108"],a:2,e:"12 dikali 8 sama dengan 96."},
+ {q:"Jika 3x = 21, nilai x adalah ...",o:["6","7","8","9"],a:1,e:"Bagi kedua sisi dengan 3, sehingga x = 7."},
+ {q:"Luas persegi dengan sisi 6 cm adalah ...",o:["12 cm²","24 cm²","30 cm²","36 cm²"],a:3,e:"Luas persegi = sisi × sisi = 6 × 6 = 36 cm²."},
+ {q:"Bentuk desimal dari 1/4 adalah ...",o:["0,20","0,25","0,40","0,50"],a:1,e:"1 dibagi 4 sama dengan 0,25."},
+ {q:"Rata-rata dari 4, 6, dan 8 adalah ...",o:["5","6","7","8"],a:1,e:"(4 + 6 + 8) ÷ 3 = 18 ÷ 3 = 6."}
+],
+indonesia:[
+ {q:"Gagasan utama dalam sebuah paragraf disebut ...",o:["Kalimat penjelas","Ide pokok","Kata penghubung","Kesimpulan akhir"],a:1,e:"Ide pokok adalah inti pembahasan dalam paragraf."},
+ {q:"Teks yang berisi langkah-langkah melakukan sesuatu disebut ...",o:["Teks narasi","Teks deskripsi","Teks prosedur","Teks eksposisi"],a:2,e:"Teks prosedur menjelaskan tahapan atau cara melakukan sesuatu."},
+ {q:"Sinonim kata 'cermat' adalah ...",o:["Teliti","Lalai","Ragu","Lambat"],a:0,e:"Cermat memiliki makna teliti atau berhati-hati."},
+ {q:"Kalimat yang digunakan untuk mengajak disebut kalimat ...",o:["Tanya","Perintah","Persuasif","Berita"],a:2,e:"Kalimat persuasif bertujuan mengajak atau memengaruhi pembaca."},
+ {q:"Unsur intrinsik yang menunjukkan tempat dan waktu cerita adalah ...",o:["Tema","Alur","Amanat","Latar"],a:3,e:"Latar menunjukkan tempat, waktu, dan suasana dalam cerita."}
+],
+english:[
+ {q:"What is the correct meaning of 'beautiful'?",o:["Cepat","Indah","Kuat","Mahal"],a:1,e:"Beautiful berarti indah atau cantik."},
+ {q:"Choose the correct sentence.",o:["She go to school","She going school","She goes to school","She gone to school"],a:2,e:"Untuk subjek she dalam simple present, kata kerja umumnya ditambah -s/-es."},
+ {q:"The opposite of 'early' is ...",o:["Fast","Late","Near","Short"],a:1,e:"Late adalah lawan kata early."},
+ {q:"What is the past form of 'eat'?",o:["Eated","Eaten","Ate","Eating"],a:2,e:"Bentuk simple past dari eat adalah ate."},
+ {q:"'They are studying' uses which tense?",o:["Simple present","Present continuous","Simple past","Future tense"],a:1,e:"Pola are + verb-ing menunjukkan present continuous."}
+],
+ipa:[
+ {q:"Organ tubuh yang berfungsi memompa darah adalah ...",o:["Paru-paru","Hati","Jantung","Ginjal"],a:2,e:"Jantung memompa darah ke seluruh tubuh."},
+ {q:"Proses tumbuhan membuat makanan dengan bantuan cahaya disebut ...",o:["Respirasi","Fotosintesis","Evaporasi","Fermentasi"],a:1,e:"Fotosintesis menggunakan cahaya untuk membantu tumbuhan membuat makanan."},
+ {q:"Satuan dasar kuat arus listrik adalah ...",o:["Volt","Watt","Ohm","Ampere"],a:3,e:"Kuat arus listrik diukur dalam ampere."},
+ {q:"Planet yang dikenal sebagai planet merah adalah ...",o:["Venus","Mars","Jupiter","Saturnus"],a:1,e:"Mars tampak kemerahan karena mineral besi pada permukaannya."},
+ {q:"Perubahan wujud dari cair menjadi gas disebut ...",o:["Membeku","Mengembun","Menguap","Menyublim"],a:2,e:"Menguap adalah perubahan wujud zat cair menjadi gas."}
+],
+ips:[
+ {q:"Kegiatan menghasilkan barang atau jasa disebut ...",o:["Konsumsi","Distribusi","Produksi","Investasi"],a:2,e:"Produksi adalah kegiatan menghasilkan atau menambah nilai guna barang dan jasa."},
+ {q:"Ibu kota negara Indonesia saat ini dalam masa perpindahan adalah ...",o:["Bandung","Jakarta","Surabaya","Medan"],a:1,e:"Jakarta masih menjadi ibu kota sampai penetapan pemindahan melalui keputusan presiden sesuai ketentuan yang berlaku."},
+ {q:"Garis khayal yang membagi bumi menjadi belahan utara dan selatan adalah ...",o:["Garis bujur","Garis khatulistiwa","Garis tanggal","Garis lintang 30°"],a:1,e:"Garis khatulistiwa atau ekuator membagi bumi menjadi belahan utara dan selatan."},
+ {q:"Organisasi ASEAN didirikan pada tahun ...",o:["1945","1955","1967","1975"],a:2,e:"ASEAN didirikan pada 8 Agustus 1967."},
+ {q:"Pelaku ekonomi yang menggunakan barang dan jasa untuk memenuhi kebutuhan disebut ...",o:["Produsen","Distributor","Konsumen","Eksportir"],a:2,e:"Konsumen menggunakan barang dan jasa untuk memenuhi kebutuhan."}
+]};
+let user=null,questions={},currentQuestions=[],qIndex=0,selected=null,correctCount=0,earned=0,quizCategory="",answered=false;
+function loadData(){try{questions=JSON.parse(localStorage.getItem("eq_questions"))||structuredClone(defaultQuestions)}catch(e){questions=JSON.parse(JSON.stringify(defaultQuestions))}}
+function saveQuestions(){localStorage.setItem("eq_questions",JSON.stringify(questions))}
+function getUsers(){return JSON.parse(localStorage.getItem("eq_users")||"{}")}
+function getResults(){return JSON.parse(localStorage.getItem("eq_results")||"[]")}
+function login(){let name=document.getElementById("loginName").value.trim(),klass=document.getElementById("loginClass").value.trim(),role=document.getElementById("loginRole").value;if(!name||!klass){alert("Isi nama dan kelas terlebih dahulu.");return}user={name,klass,role};let users=getUsers();users[name.toLowerCase()]={name,klass,role};localStorage.setItem("eq_users",JSON.stringify(users));sessionStorage.setItem("eq_session",JSON.stringify(user));startApp()}
+function startApp(){document.getElementById("loginScreen").classList.add("hidden");document.getElementById("app").classList.remove("hidden");document.getElementById("topUser").textContent=user.name+" · "+(user.role==="teacher"?"Guru":user.klass);document.getElementById("logoutBtn").style.display="inline-block";document.getElementById("teacherNav").classList.toggle("hidden",user.role!=="teacher");document.getElementById("welcomeTitle").textContent="Hai, "+user.name+"! 👋";renderCategories();updateHome();fillTeacherCategories();showPage("home")}
+function logout(){sessionStorage.removeItem("eq_session");user=null;document.getElementById("app").classList.add("hidden");document.getElementById("loginScreen").classList.remove("hidden");document.getElementById("logoutBtn").style.display="none";document.getElementById("topUser").textContent="Mode Tamu"}
+function showPage(page){if(page==="teacher"&&user.role!=="teacher"){alert("Dashboard guru hanya tersedia pada mode guru.");return}document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));let el=document.getElementById("page-"+page);if(el)el.classList.remove("hidden");document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));if(page==="leaderboard")renderLeaderboard();if(page==="teacher")renderTeacher()}
+function renderCategories(){let cards=categories.map(c=>`<button class="category" onclick="startQuiz('${c.id}')"><div class="emoji">${c.emoji}</div><h3>${c.name}</h3><p>${c.desc}</p><div style="margin-top:13px"><span class="pill">${(questions[c.id]||[]).length} soal tersedia</span></div></button>`).join("");document.getElementById("homeCategories").innerHTML=cards;document.getElementById("allCategories").innerHTML=cards}
+function userResults(){return getResults().filter(r=>r.name.toLowerCase()===user.name.toLowerCase())}
+function updateHome(){let mine=userResults(),points=mine.reduce((s,r)=>s+r.points,0),avg=mine.length?Math.round(mine.reduce((s,r)=>s+r.score,0)/mine.length):0;document.getElementById("myPoints").textContent=points;document.getElementById("myQuizzes").textContent=mine.length;document.getElementById("myAverage").textContent=avg+"%";renderHomeLeaders()}
+function renderHomeLeaders(){let data=aggregateLeaderboard().slice(0,3);document.getElementById("homeLeaders").innerHTML=data.length?data.map((r,i)=>leaderHTML(r,i)).join(""):'<div class="empty">Belum ada hasil kuis. Jadilah yang pertama mencoba!</div>'}
+function aggregateLeaderboard(){let map={};getResults().forEach(r=>{let k=r.name.toLowerCase();if(!map[k])map[k]={name:r.name,klass:r.klass,points:0,quizzes:0};map[k].points+=r.points;map[k].quizzes++});return Object.values(map).sort((a,b)=>b.points-a.points||b.quizzes-a.quizzes)}
+function leaderHTML(r,i){return `<div class="leader-row"><div class="rank">${i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div><div class="avatar">${escapeHTML(r.name.charAt(0).toUpperCase())}</div><div><strong>${escapeHTML(r.name)}</strong><div class="muted" style="font-size:11px">${escapeHTML(r.klass||"")}</div></div><div class="score">${r.points} poin</div></div>`}
+function renderLeaderboard(){let data=aggregateLeaderboard();document.getElementById("leaderboardContent").innerHTML=data.length?data.map(leaderHTML).join(""):'<div class="empty"><div style="font-size:38px">🏆</div><h3>Belum ada peringkat</h3><p>Selesaikan kuis untuk mengisi leaderboard.</p></div>'}
+function startQuiz(id){if(user.role!=="student"){alert("Silakan masuk sebagai siswa untuk mengerjakan kuis.");return}let pool=questions[id]||[];if(!pool.length){alert("Belum ada soal untuk kategori ini.");return}quizCategory=id;currentQuestions=[...pool].sort(()=>Math.random()-.5).slice(0,Math.min(5,pool.length));qIndex=0;selected=null;correctCount=0;earned=0;showPage("quiz");renderQuestion()}
+function renderQuestion(){answered=false;selected=null;let q=currentQuestions[qIndex],cat=categories.find(c=>c.id===quizCategory);document.getElementById("quizCategory").textContent=cat.name;document.getElementById("quizCounter").textContent=(qIndex+1)+"/"+currentQuestions.length;document.getElementById("progressBar").style.width=(qIndex/currentQuestions.length*100)+"%";document.getElementById("questionText").textContent=q.q;document.getElementById("feedback").classList.add("hidden");document.getElementById("nextBtn").disabled=true;document.getElementById("nextBtn").textContent=qIndex===currentQuestions.length-1?"Lihat Hasil →":"Jawab & Lanjut →";document.getElementById("options").innerHTML=q.o.map((o,i)=>`<button class="option" onclick="chooseAnswer(${i})"><b>${"ABCD"[i]}</b><span>${escapeHTML(o)}</span></button>`).join("")}
+function chooseAnswer(i){if(answered)return;selected=i;let q=currentQuestions[qIndex];answered=true;let buttons=[...document.querySelectorAll(".option")];buttons.forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add("correct");if(j===i&&i!==q.a)b.classList.add("wrong")});let good=i===q.a;if(good){correctCount++;earned+=10}let fb=document.getElementById("feedback");fb.className="feedback "+(good?"good":"bad");fb.textContent=(good?"✓ Tepat! +10 poin. ":"Belum tepat. ") + q.e;document.getElementById("nextBtn").disabled=false}
+function nextQuestion(){if(!answered)return;if(qIndex<currentQuestions.length-1){qIndex++;renderQuestion()}else finishQuiz()}
+function finishQuiz(){let score=Math.round(correctCount/currentQuestions.length*100),bonus=score===100?10:0,points=earned+bonus;let record={name:user.name,klass:user.klass,category:quizCategory,score,correct:correctCount,total:currentQuestions.length,points,date:new Date().toISOString()};let results=getResults();results.push(record);localStorage.setItem("eq_results",JSON.stringify(results));document.getElementById("resultScore").textContent=score;document.getElementById("resultCorrect").textContent=correctCount+"/"+currentQuestions.length;document.getElementById("resultPoints").textContent=points;document.getElementById("resultPercent").textContent=score+"%";document.getElementById("resultMessage").textContent=score>=80?"Luar biasa! Terus pertahankan semangat belajarmu.":score>=60?"Bagus! Terus berlatih agar semakin percaya diri.":"Jangan menyerah. Setiap latihan membuatmu semakin berkembang.";document.getElementById("progressBar").style.width="100%";updateHome();showPage("result")}
+function exitQuiz(){if(confirm("Keluar dari kuis? Progres kuis ini tidak akan disimpan."))showPage("categories")}
+function fillTeacherCategories(){document.getElementById("newCategory").innerHTML=categories.map(c=>`<option value="${c.id}">${c.name}</option>`).join("")}
+function addQuestion(){if(user.role!=="teacher")return;let id=document.getElementById("newCategory").value,q=document.getElementById("newQuestion").value.trim(),opts=["optA","optB","optC","optD"].map(x=>document.getElementById(x).value.trim()),a=Number(document.getElementById("correct").value);if(!q||opts.some(x=>!x)){document.getElementById("addMessage").textContent="Lengkapi pertanyaan dan keempat pilihan.";return}questions[id]=questions[id]||[];questions[id].push({q,o:opts,a,e:"Pembahasan dapat ditambahkan pada pengembangan berikutnya."});saveQuestions();renderCategories();document.getElementById("addMessage").textContent="Soal berhasil disimpan!";["newQuestion","optA","optB","optC","optD"].forEach(x=>document.getElementById(x).value="")}
+function renderTeacher(){let results=getResults().slice().reverse();let users=Object.keys(getUsers()).length;document.getElementById("classStudents").textContent=users;document.getElementById("classAttempts").textContent=results.length;document.getElementById("teacherResults").innerHTML=results.length?`<div style="overflow-x:auto"><table class="table"><thead><tr><th>Siswa</th><th>Kategori</th><th>Nilai</th><th>Poin</th></tr></thead><tbody>${results.slice(0,8).map(r=>`<tr><td>${escapeHTML(r.name)}</td><td>${categories.find(c=>c.id===r.category)?.name||r.category}</td><td>${r.score}%</td><td>${r.points}</td></tr>`).join("")}</tbody></table></div>`:'<p class="muted">Belum ada hasil kuis.</p>'}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+loadData();let saved=sessionStorage.getItem("eq_session");if(saved){try{user=JSON.parse(saved);startApp()}catch(e){}}
+</script>
+</body>
+</html>
